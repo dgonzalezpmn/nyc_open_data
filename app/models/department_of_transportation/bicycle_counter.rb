@@ -7,6 +7,50 @@ module DepartmentOfTransportation
 
     CSV_SODA2_API_ENDPOINT = "https://data.cityofnewyork.us/resource/smn3-rzf9.csv"
 
+    def self.url
+      "https://data.cityofnewyork.us/Transportation/Bicycle-Counters/smn3-rzf9/about_data"
+    end
+
+    def self.name
+      "Bicycle Counters"
+    end
+
+    def self.description
+      "Bicycle counts conducted around New York City at key locations. For the counts data, please refer to the Bicycle Counts dataset. Bicycle Counts: https://data.cityofnewyork.us/Transportation/Bicycle-Counts/uczf-rk3c"
+    end
+
+    def self.data_provided_by
+      "Department of Transportation (DOT)"
+    end
+
+    # Dataset Information
+    def self.agency
+      "Department of Transportation (DOT)"
+    end
+
+    # Update
+    def self.update_frequency
+      "Daily"
+    end
+
+    def self.automation
+      "Yes"
+    end
+
+    def self.date_made_public
+      "12/31/2019"
+    end
+
+    # Topics
+    def self.category
+      "Transportation"
+    end
+
+    def self.tags
+      "bicycle, count, eco-counter, bike"
+    end
+
+    # Download
     def self.download_csv_with_soda2
       URI.open(CSV_SODA2_API_ENDPOINT) do |f|
         f.each_line.each_with_index do |line, index|
@@ -39,45 +83,6 @@ module DepartmentOfTransportation
           )
         end
       end
-    end
-
-    def name
-      "Bicycle Counters"
-    end
-
-    def description
-      "Bicycle counts conducted around New York City at key locations. For the counts data, please refer to the Bicycle Counts dataset. Bicycle Counts: https://data.cityofnewyork.us/Transportation/Bicycle-Counts/uczf-rk3c"
-    end
-
-    def data_provided_by
-      "Department of Transportation (DOT)"
-    end
-
-    # Dataset Information
-    def agency
-      "Department of Transportation (DOT)"
-    end
-
-    # Update
-    def update_frequency
-      "Daily"
-    end
-
-    def automation
-      "Yes"
-    end
-
-    def date_made_public
-      "12/31/2019"
-    end
-
-    # Topics
-    def category
-      "Transportation"
-    end
-
-    def tags
-      "bicycle, count, eco-counter, bike"
     end
   end
 end
