@@ -10,22 +10,40 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2025_11_14_014438) do
+ActiveRecord::Schema[7.2].define(version: 2025_11_19_214325) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "bicycle_counters", force: :cascade do |t|
     t.integer "original_id"
-    t.text "name"
-    t.text "domain"
+    t.string "name"
+    t.string "domain"
     t.decimal "latitude", precision: 15, scale: 10
     t.decimal "longitude", precision: 15, scale: 10
     t.integer "interval"
-    t.text "timezone"
-    t.text "sens"
-    t.text "counter"
+    t.string "timezone"
+    t.string "sens"
+    t.string "counter"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["original_id"], name: "index_bicycle_counters_on_original_id", unique: true
+  end
+
+  create_table "nyc_permitted_event_informations", force: :cascade do |t|
+    t.integer "event_id"
+    t.string "event_name"
+    t.datetime "start_date_time"
+    t.datetime "end_date_time"
+    t.string "event_agency"
+    t.string "event_type"
+    t.string "event_borough"
+    t.string "event_location"
+    t.string "event_street_side"
+    t.string "street_closure_type"
+    t.string "community_board"
+    t.string "police_precinct"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["event_id"], name: "index_nyc_permitted_event_informations_on_event_id", unique: true
   end
 end
