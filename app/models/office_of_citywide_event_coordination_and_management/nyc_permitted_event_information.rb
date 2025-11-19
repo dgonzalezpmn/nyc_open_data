@@ -41,6 +41,15 @@ module OfficeOfCitywideEventCoordinationAndManagement
       "11/19/2013"
     end
 
+    # Topics
+    def self.category
+      "City Government"
+    end
+
+    def self.tags
+      "event, to do, activity, park, block party, festival, nyc permitted event information, otm, office of the mayor"
+    end
+
     # Download
     def self.download_csv_with_soda2
       URI.open(CSV_SODA2_API_ENDPOINT) do |f|
