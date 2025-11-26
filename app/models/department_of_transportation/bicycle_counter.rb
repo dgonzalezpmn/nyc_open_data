@@ -89,7 +89,8 @@ module DepartmentOfTransportation
           remote_url: CSV_SODA2_API_ENDPOINT
         },
         transform_config: {
-          model: ::DepartmentOfTransportation::BicycleCounter
+          model: ::DepartmentOfTransportation::BicycleCounter,
+          search_keys: [[:original_id, :id]]
         }
       })
     end
