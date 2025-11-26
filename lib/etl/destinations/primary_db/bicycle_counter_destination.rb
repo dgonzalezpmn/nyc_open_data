@@ -1,12 +1,16 @@
-require 'csv'
-
 module Etl
   module Destinations
     module PrimaryDb
       class BicycleCounterDestination
+        attr_reader :model
+
         # https://github.com/thbar/kiba/wiki/Implementing-ETL-destinations
+        def initialize(model)
+          @model = model
+        end
+
         def write(row)
-          ::DepartmentOfTransportation::BicycleCounter.create!(
+          model.create!(
             original_id: row[:id],
             name: row[:name],
             domain: row[:domain],
