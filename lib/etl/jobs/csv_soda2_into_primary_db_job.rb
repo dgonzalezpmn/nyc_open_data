@@ -10,7 +10,7 @@ module Etl
 
           transform Transforms::PrimaryDb::FilterExistingRecordsTransform, DepartmentOfTransportation::BicycleCounter
 
-          destination Destinations::BicycleCounterPrimaryDb
+          destination Destinations::PrimaryDb::BicycleCounterDestination
         end
       end
     end
