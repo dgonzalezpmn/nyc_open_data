@@ -4,9 +4,9 @@ module Etl
       module_function
 
       # https://github.com/thbar/kiba/wiki/How-to-define-ETL-jobs-with-Kiba
-      def setup(config = {})
+      def setup(config)
         Kiba.parse do
-          source Tasks::Sources::CsvSoda2Source, ::DepartmentOfTransportation::BicycleCounter::CSV_SODA2_API_ENDPOINT
+          source Tasks::Sources::CsvSoda2Source, **config[:source_config]
 
           transform Tasks::Transforms::PrimaryDb::FilterExistingRecordsTransform, DepartmentOfTransportation::BicycleCounter
 
