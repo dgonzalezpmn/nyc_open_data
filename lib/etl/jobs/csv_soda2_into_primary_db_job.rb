@@ -8,7 +8,7 @@ module Etl
         Kiba.parse do
           source Sources::CsvSoda2Source, ::DepartmentOfTransportation::BicycleCounter::CSV_SODA2_API_ENDPOINT
 
-          transform Transforms::BicycleCounterPrimaryDbFilterExistingRecords
+          transform Transforms::PrimaryDb::FilterExistingRecordsTransform
 
           destination Destinations::BicycleCounterPrimaryDb
         end
