@@ -22,7 +22,7 @@ module Etl
             # return row, modified
           # end
 
-          # destination SomeDestination, destination_config...
+          destination Destinations::BicycleCounterPrimaryDb #, destination_config...
 
           # a final block which will be called only if the pipeline succeeded
           # post_process do
