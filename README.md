@@ -9,11 +9,11 @@ The purpose of this project is to empower you to
 
 ## Local Setup
 
-The [local setup guide](docs/LOCAL.md) details how to run the project's rails app locally.
+Please read the [local setup guide](docs/LOCAL.md) for instructions on how to run the project's rails app locally.
 
 ## Core Concepts
 
-The [core concepts document](docs/CORE_CONCEPTS.md) summarizes the main technologies we are leveraging.
+Please read the [core concepts document](docs/CORE_CONCEPTS.md) to learn about the main technologies we are leveraging.
 
 ## Create Your Own Copy of NYC Open Data
 
