@@ -84,7 +84,7 @@ test:
     database: nyc_open_data_analytics_test
     adapter: postgresql
     encoding: unicode
-    host: <%= ENV['RDS_HOSTNAME'] || 'analytics_db' %>
+    host: <%= ENV['ANALYTICS_RDS_HOSTNAME'] || 'analytics_db' %>
     username: postgres
     password: password
     pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
