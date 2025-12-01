@@ -55,7 +55,7 @@ docker-compose run web bundle exec rails g migration <Migration Name> --database
 ```
 
 ```
-docker-compose run web bundle exec rake db:migrate
+docker-compose run web bundle exec rake db:migrate:analytics
 ```
 
 Remember to create a corresponding Rails model in app/models/analytics/.
@@ -81,7 +81,7 @@ Permission errors may appear because files are created in a docker container but
 Change the permission levels on the file to resolve these issues.
 
 ```
-sudo chmod <***>
+sudo chmod <***> <filename>
 ```
 
 https://en.wikipedia.org/wiki/Chmod
