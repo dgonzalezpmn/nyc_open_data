@@ -1,7 +1,7 @@
 require 'open-uri'
 require 'csv'
 
-require 'remote_csv/soda3'
+require 'remote_csv'
 
 module DepartmentOfTransportation
   class BicycleCounter < ApplicationRecord
@@ -92,7 +92,7 @@ module DepartmentOfTransportation
 
     # Note: The headers are different between the soda2 csv and the soda3 csv files
     def self.import_from_csv_soda3
-      csv = ::RemoteCSV::Soda3.build(CSV_SODA3_API_ENDPOINT)
+      csv = RemoteCSV.build(CSV_SODA3_API_ENDPOINT, soda_version: 3)
 
       csv.each do |row|
         original_id = row[4]
