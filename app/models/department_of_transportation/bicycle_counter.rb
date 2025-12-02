@@ -1,6 +1,3 @@
-require 'open-uri'
-require 'csv'
-
 require 'remote_csv'
 
 module DepartmentOfTransportation
@@ -55,11 +52,9 @@ module DepartmentOfTransportation
 
     # Import
     def self.import_from_csv_soda2
-      CSV.new(
-        URI.open(CSV_SODA2_API_ENDPOINT),
-        headers: true,
-        header_converters: :symbol
-      ).each do |row|
+      csv = RemoteCSV.open(CSV_SODA2_API_ENDPOINT)
+
+      csv.each do |row|
           original_id = row[0]
           name = row[1]
           domain = row[2]
@@ -90,7 +85,7 @@ module DepartmentOfTransportation
       Etl::Runners::BicycleCountersIntoPrimaryDb.run
     end
 
-    # Note: The headers are different between the soda2 csv and the soda3 csv files
+    # Note: The headers are different between the soda2 and soda3 csv files
     def self.import_from_csv_soda3
       csv = RemoteCSV.open(CSV_SODA3_API_ENDPOINT, soda_version: 3)
 
