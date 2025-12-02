@@ -2,7 +2,7 @@ require 'open-uri'
 require 'csv'
 
 class RemoteCSV
-  def self.build(remote_url, soda_version: 2)
+  def self.open(remote_url, soda_version: 2)
     if soda_version == 2
       return CSV.new(
         URI.open(remote_url),
