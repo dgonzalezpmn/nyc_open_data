@@ -13,7 +13,9 @@ class RemoteDataset
     pageSize = 50000
     offset = (pageNumber - 1) * pageSize
 
-    remote_url_with_pagination = "https://data.cityofnewyork.us/resource/smn3-rzf9.csv?$limit=#{pageSize}&$offset=#{offset}&$order=id%20ASC"
+    uri = URI(remote_url)
+    uri.query = URI.encode_www_form({ "$limit" => pageSize, "$offset" => offset, "$order" => "id ASC" })
+    remote_url_with_pagination = uri.to_s
 
     csv = CSV.new(
       URI.open(remote_url_with_pagination),
@@ -30,7 +32,10 @@ class RemoteDataset
 
       pageNumber += 1
       offset = (pageNumber - 1) * pageSize
-      remote_url_with_pagination = "https://data.cityofnewyork.us/resource/smn3-rzf9.csv?$limit=#{pageSize}&$offset=#{offset}&$order=id%20ASC"
+
+      uri = URI(remote_url)
+      uri.query = URI.encode_www_form({ "$limit" => pageSize, "$offset" => offset, "$order" => "id ASC" })
+      remote_url_with_pagination = uri.to_s
 
       csv = CSV.new(
         URI.open(remote_url_with_pagination),
