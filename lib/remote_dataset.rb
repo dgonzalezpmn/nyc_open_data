@@ -3,21 +3,21 @@ require 'csv'
 
 class RemoteDataset
   attr_reader :remote_url
-  attr_reader :pageNumber
-  attr_reader :pageSize
+  attr_reader :page_number
+  attr_reader :page_size
 
   def initialize(remote_url:, page_number: 1, page_size: 50000)
     @remote_url = remote_url
-    @pageNumber = page_number
-    @pageSize = page_size
+    @page_number = page_number
+    @page_size = page_size
   end
 
   def each
-    _pageNumber = 1
-    _offset = (_pageNumber - 1) * pageSize
+    _page_number = 1
+    _offset = (_page_number - 1) * page_size
 
     uri = URI(remote_url)
-    uri.query = URI.encode_www_form({ "$limit" => pageSize, "$offset" => _offset, "$order" => "id ASC" })
+    uri.query = URI.encode_www_form({ "$limit" => page_size, "$offset" => _offset, "$order" => "id ASC" })
     remote_url_with_pagination = uri.to_s
 
     csv = CSV.new(
@@ -33,11 +33,11 @@ class RemoteDataset
         yield row
       end
 
-      _pageNumber += 1
-      _offset = (_pageNumber - 1) * pageSize
+      _page_number += 1
+      _offset = (_page_number - 1) * page_size
 
       uri = URI(remote_url)
-      uri.query = URI.encode_www_form({ "$limit" => pageSize, "$offset" => _offset, "$order" => "id ASC" })
+      uri.query = URI.encode_www_form({ "$limit" => page_size, "$offset" => _offset, "$order" => "id ASC" })
       remote_url_with_pagination = uri.to_s
 
       csv = CSV.new(
