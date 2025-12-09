@@ -1,10 +1,11 @@
-require 'remote_csv'
+require 'remote_dataset/csv/soda2'
+require 'remote_dataset/csv/soda3'
 
 module OfficeOfCitywideEventCoordinationAndManagement
   class NycPermittedEventInformation < ApplicationRecord
     self.table_name = :nyc_permitted_event_informations
 
-    CSV_SODA2_API_ENDPOINT = "https://data.cityofnewyork.us/resource/tvpp-9vvx.csv?$limit=50000&$offset=0&$order=event_id%20ASC"
+    CSV_SODA2_API_ENDPOINT = "https://data.cityofnewyork.us/resource/tvpp-9vvx.csv"
     CSV_SODA3_API_ENDPOINT = "https://data.cityofnewyork.us/api/v3/views/tvpp-9vvx/query.csv"
 
     def self.url
@@ -52,7 +53,7 @@ module OfficeOfCitywideEventCoordinationAndManagement
 
     # Import
     def self.import_from_csv_soda2
-      csv = RemoteCsv.open(CSV_SODA2_API_ENDPOINT)
+      csv = RemoteDataset::Csv::Soda2.new(remote_url: CSV_SODA2_API_ENDPOINT)
 
       csv.each do |row|
         event_id = row[0]
@@ -97,21 +98,21 @@ module OfficeOfCitywideEventCoordinationAndManagement
 
     # Note: The headers are different between the soda2 and soda3 csv files
     def self.import_from_csv_soda3
-       csv = RemoteCsv.open(CSV_SODA3_API_ENDPOINT, soda_version: 3)
+      csv = RemoteDataset::Csv::Soda3.new(remote_url: CSV_SODA3_API_ENDPOINT)
 
-       csv.each do |row|
-        event_id = row[4]
-        event_name = row[5]
-        start_date_time = row[6]
-        end_date_time = row[7]
-        event_agency = row[8]
-        event_type = row[9]
-        event_borough = row[10]
-        event_location = row[11]
-        event_street_side = row[12]
-        street_closure_type = row[13]
-        community_board = row[14]
-        police_precinct = row[15]
+      csv.each do |row|
+        event_id = row[0]
+        event_name = row[1]
+        start_date_time = row[2]
+        end_date_time = row[3]
+        event_agency = row[4]
+        event_type = row[5]
+        event_borough = row[6]
+        event_location = row[7]
+        event_street_side = row[8]
+        street_closure_type = row[9]
+        community_board = row[10]
+        police_precinct = row[11]
 
         next if NycPermittedEventInformation.where(
           event_id: event_id,
@@ -133,7 +134,7 @@ module OfficeOfCitywideEventCoordinationAndManagement
           community_board: community_board,
           police_precinct: police_precinct
         )
-       end
+      end
     end
   end
 end
