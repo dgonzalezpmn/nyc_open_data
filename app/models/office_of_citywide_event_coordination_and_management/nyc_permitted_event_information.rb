@@ -98,9 +98,9 @@ module OfficeOfCitywideEventCoordinationAndManagement
 
     # Note: The headers are different between the soda2 and soda3 csv files
     def self.import_from_csv_soda3
-       csv = RemoteDataset::Csv::Soda3.new(remote_url: CSV_SODA3_API_ENDPOINT)
+      csv = RemoteDataset::Csv::Soda3.new(remote_url: CSV_SODA3_API_ENDPOINT)
 
-       csv.each do |row|
+      csv.each do |row|
         event_id = row[0]
         event_name = row[1]
         start_date_time = row[2]
@@ -134,7 +134,7 @@ module OfficeOfCitywideEventCoordinationAndManagement
           community_board: community_board,
           police_precinct: police_precinct
         )
-       end
+      end
     end
   end
 end
