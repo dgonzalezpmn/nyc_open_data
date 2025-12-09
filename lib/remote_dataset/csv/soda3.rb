@@ -59,7 +59,8 @@ module RemoteDataset
           "page": {
             "pageNumber": _page_number,
             "pageSize": page_size
-          }
+          },
+          "includeSynthetic": false
         }.to_json
         headers = { 'Authorization' => authorization_header, 'content-type' => 'application/json' }
 
