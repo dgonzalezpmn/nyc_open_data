@@ -1,6 +1,6 @@
 module Etl
   module Runners
-    class NycPermittedEventInformationCsvSoda2IntoPrimaryDb
+    class NycPermittedEventInformationSoda2CsvIntoPrimaryDb
       def self.run
         job = Etl::WorkflowTemplates::CsvSoda2IntoPrimaryDb.setup({
           source_config: {
