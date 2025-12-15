@@ -1,19 +1,19 @@
 module Etl
   module Runners
-    class BicycleCountersCsvSoda2IntoPrimaryDb
+    class BicycleCountersSoda2CsvIntoAnalyticsDb
       def self.run
-        job = Etl::WorkflowTemplates::CsvSoda2IntoPrimaryDb.setup({
+        job = Etl::WorkflowTemplates::Soda2CsvIntoAnalyticsDb.setup({
           source_config: {
             remote_url: ::DepartmentOfTransportation::BicycleCounter::SODA2_CSV_API_ENDPOINT
           },
           transform_config: {
-            model: ::DepartmentOfTransportation::BicycleCounter,
+            model: ::Analytics::BicycleCounter,
             search_keys: [
               [:original_id, :id]
             ]
           },
           destination_config: {
-            model: ::DepartmentOfTransportation::BicycleCounter,
+            model: ::Analytics::BicycleCounter,
             column_keys: [
               [:original_id, :id],
               [:name, :name],
