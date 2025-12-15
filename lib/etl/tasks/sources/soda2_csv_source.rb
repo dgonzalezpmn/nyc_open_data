@@ -1,7 +1,7 @@
 module Etl
   module Tasks
     module Sources
-      class SodaCsv2Source
+      class Soda2CsvSource
         attr_reader :soda2_csv_url
 
         # https://github.com/thbar/kiba/wiki/Implementing-ETL-sources
