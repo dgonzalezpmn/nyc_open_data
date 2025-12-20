@@ -73,3 +73,43 @@ DepartmentOfTransportation::BicycleCounter.url
 ```
 DepartmentOfTransportation::BicycleCounter.name
 ```
+
+### description
+```
+DepartmentOfTransportation::BicycleCounter.description
+```
+
+### data_provided_by
+```
+DepartmentOfTransportation::BicycleCounter.data_provided_by
+```
+
+### agency
+```
+DepartmentOfTransportation::BicycleCounter.agency
+```
+
+### update_frequency
+```
+DepartmentOfTransportation::BicycleCounter.update_frequency
+```
+
+### automation
+```
+DepartmentOfTransportation::BicycleCounter.automation
+```
+
+### date_made_public
+```
+DepartmentOfTransportation::BicycleCounter.date_made_public
+```
+
+### category
+```
+DepartmentOfTransportation::BicycleCounter.category
+```
+
+### tags
+```
+DepartmentOfTransportation::BicycleCounter.tags
+```
