@@ -13,7 +13,7 @@ module Etl
           dataset_pages = RemoteDataset::Soda2::Json.new(remote_url: soda2_url)
 
           dataset_pages.each do |row|
-            yield(row.to_hash)
+            yield(row)
           end
         end
       end
