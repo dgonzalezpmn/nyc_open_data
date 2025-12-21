@@ -253,22 +253,22 @@ module OfficeOfCitywideEventCoordinationAndManagement
     end
 
     def self.run_import_soda2
-      Etl::Runners::NycPermittedEventInformationSoda2IntoPrimaryDb.run
+      Etl::Runners::PrimaryDbImports::NycPermittedEventInformationSoda2IntoPrimaryDb.run
     end
     private_class_method :run_import_soda2
 
     def self.run_import_soda2_csv
-      Etl::Runners::NycPermittedEventInformationSoda2CsvIntoPrimaryDb.run
+      Etl::Runners::PrimaryDbImports::NycPermittedEventInformationSoda2CsvIntoPrimaryDb.run
     end
     private_class_method :run_import_soda2_csv
 
     def self.run_import_soda3
-      Etl::Runners::NycPermittedEventInformationSoda3IntoPrimaryDb.run
+      Etl::Runners::PrimaryDbImports::NycPermittedEventInformationSoda3IntoPrimaryDb.run
     end
     private_class_method :run_import_soda3
 
     def self.run_import_soda3_csv
-      Etl::Runners::NycPermittedEventInformationSoda3CsvIntoPrimaryDb.run
+      Etl::Runners::PrimaryDbImports::NycPermittedEventInformationSoda3CsvIntoPrimaryDb.run
     end
     private_class_method :run_import_soda3_csv
   end
