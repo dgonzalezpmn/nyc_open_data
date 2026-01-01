@@ -247,9 +247,9 @@ module OfficeOfCitywideEventCoordinationAndManagement
         run_import_soda3
       end
 
-      # if api_version == '3' && content_type == 'csv'
-      #   run_import_soda3_csv
-      # end
+      if api_version == '3' && content_type == 'csv'
+        run_import_soda3_csv
+      end
     end
 
     def self.run_import_soda2
@@ -266,5 +266,10 @@ module OfficeOfCitywideEventCoordinationAndManagement
       Etl::Runners::PrimaryDbImports::NycPermittedEventInformationHistorical::Soda3IntoPrimaryDb.run
     end
     private_class_method :run_import_soda3
+
+    def self.run_import_soda3_csv
+      Etl::Runners::PrimaryDbImports::NycPermittedEventInformationHistorical::Soda3CsvIntoPrimaryDb.run
+    end
+    private_class_method :run_import_soda3_csv
   end
 end
