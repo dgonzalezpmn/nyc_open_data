@@ -58,6 +58,8 @@ Enter the following values for the remaining fields
 
 Click connect.
 
+You should now be able to query and build charts on top of your copy of NYC Open Data.
+
 ### Managed Solutions
 
 #### Preset
