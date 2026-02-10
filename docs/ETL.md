@@ -4,14 +4,14 @@ Transform open data with Kiba, a data processing & ETL framework for Ruby.
 
 ## Kiba
 
-Kiba provides a DSL to let you define ETL jobs that consist of
+Kiba provides a DSL for defining ETL jobs that consist of
 - sources
 - transformations
 - destinations
 
 ### Workflows
 
-This project refers to Kib jobs as workflows.
+This project refers to Kiba jobs as workflows.
 
 They define the steps in an ETL process.
 
@@ -33,7 +33,7 @@ lib/etl/workflow_templates/
 
 ### Sources
 
-Sources represent sources of data.
+Sources are sources of data.
 
 They live in
 
@@ -43,14 +43,38 @@ lib/etl/tasks/sources/
 
 ### Transformations
 
-Transformations represent operations to perform on individual entries in a dataset.
+Transformations are operations to perform on individual entries in a dataset.
 
 They live in
 
 ```
-lib/etl/tasks/transformations
+lib/etl/tasks/transformations/
 ```
 
 ### Destinations
 
+Destinations are the table in the analytics database where we store the results of a single or series of transformations.
+
+They live in
+
+```
+lib/etl/tasks/destinations/
+```
+
 ### Runners
+
+Workflows define the series of steps in an ETL process.
+
+In order to actually run the workflow, the definition needs to be instantiated and called.
+
+Kiba provides two apis to accomplish this
+
+Kiba.parse instantiates an object representing the workflow and Kiba.run invokes the actual workflow.
+
+Runners are classes that encapsulate the instantiaion and invocation of a workflow.
+
+They live in
+
+```
+lib/etl/runners/
+```
