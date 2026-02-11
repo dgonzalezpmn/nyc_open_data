@@ -80,10 +80,10 @@ module PoliceDepartment
         zip_code = row["zip_code"]
         latitude = row["latitude"]
         longitude = row["longitude"]
-        _location = row["location"]
+        location = row["location"]
         on_street_name = row["on_street_name"]
         off_street_name = row["off_street_name"]
-        _cross_street_name = row["cross_street_name"]
+        cross_street_name = row["cross_street_name"]
         number_of_persons_injured = row["number_of_persons_injured"]
         number_of_persons_killed = row["number_of_persons_killed"]
         number_of_pedestrians_injured = row["number_of_pedestrians_injured"]
@@ -113,8 +113,10 @@ module PoliceDepartment
           zip_code: zip_code,
           latitude: latitude,
           longitude: longitude,
+          location: location,
           on_street_name: on_street_name,
           off_street_name: off_street_name,
+          cross_street_name: cross_street_name,
           number_of_persons_injured: number_of_persons_injured,
           number_of_persons_killed: number_of_persons_killed,
           number_of_pedestrians_injured: number_of_pedestrians_injured,
@@ -149,10 +151,10 @@ module PoliceDepartment
         zip_code = row[3]
         latitude = row[4]
         longitude = row[5]
-        _location = row[6]
+        location = row[6]
         on_street_name = row[7]
         off_street_name = row[8]
-        _cross_street_name = row[9]
+        cross_street_name = row[9]
         number_of_persons_injured = row[10]
         number_of_persons_killed = row[11]
         number_of_pedestrians_injured = row[12]
@@ -182,8 +184,10 @@ module PoliceDepartment
           zip_code: zip_code,
           latitude: latitude,
           longitude: longitude,
+          location: location,
           on_street_name: on_street_name,
           off_street_name: off_street_name,
+          cross_street_name: cross_street_name,
           number_of_persons_injured: number_of_persons_injured,
           number_of_persons_killed: number_of_persons_killed,
           number_of_pedestrians_injured: number_of_pedestrians_injured,
@@ -218,10 +222,10 @@ module PoliceDepartment
         zip_code = row["zip_code"]
         latitude = row["latitude"]
         longitude = row["longitude"]
-        _location = row["location"]
+        location = row["location"]
         on_street_name = row["on_street_name"]
         off_street_name = row["off_street_name"]
-        _cross_street_name = row["cross_street_name"]
+        cross_street_name = row["cross_street_name"]
         number_of_persons_injured = row["number_of_persons_injured"]
         number_of_persons_killed = row["number_of_persons_killed"]
         number_of_pedestrians_injured = row["number_of_pedestrians_injured"]
@@ -251,8 +255,10 @@ module PoliceDepartment
           zip_code: zip_code,
           latitude: latitude,
           longitude: longitude,
+          location: location,
           on_street_name: on_street_name,
           off_street_name: off_street_name,
+          cross_street_name: cross_street_name,
           number_of_persons_injured: number_of_persons_injured,
           number_of_persons_killed: number_of_persons_killed,
           number_of_pedestrians_injured: number_of_pedestrians_injured,
@@ -287,10 +293,10 @@ module PoliceDepartment
         zip_code = row[3]
         latitude = row[4]
         longitude = row[5]
-        _location = row[6]
+        location = row[6]
         on_street_name = row[7]
         off_street_name = row[8]
-        _cross_street_name = row[9]
+        cross_street_name = row[9]
         number_of_persons_injured = row[10]
         number_of_persons_killed = row[11]
         number_of_pedestrians_injured = row[12]
@@ -320,8 +326,10 @@ module PoliceDepartment
           zip_code: zip_code,
           latitude: latitude,
           longitude: longitude,
+          location: location,
           on_street_name: on_street_name,
           off_street_name: off_street_name,
+          cross_street_name: cross_street_name,
           number_of_persons_injured: number_of_persons_injured,
           number_of_persons_killed: number_of_persons_killed,
           number_of_pedestrians_injured: number_of_pedestrians_injured,
