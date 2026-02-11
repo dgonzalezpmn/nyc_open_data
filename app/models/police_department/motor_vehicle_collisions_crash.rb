@@ -23,5 +23,32 @@ module PoliceDepartment
     def self.data_provided_by
       "Police Department (NYPD)"
     end
+
+    # Dataset Information
+    def self.agency
+      "Police Department (NYPD)"
+    end
+
+    # Update
+    def self.update_frequency
+      "Daily"
+    end
+
+    def self.automation
+      "Yes"
+    end
+
+    def self.date_made_public
+      "5/7/2014"
+    end
+
+    # Topics
+    def self.category
+      "Public Safety"
+    end
+
+    def self.tags
+      "nypd, collisions, bigapps, big apps, visionzero, vision, zero, nycopendata, traffic data"
+    end
   end
 end
